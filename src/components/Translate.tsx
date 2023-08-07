@@ -2,7 +2,7 @@
 import React, {useEffect, useState} from 'react'
 import TranslateCard from './TranslateCard'
 import { Button } from './ui/button'
-import {HiTranslate} from "react-icons/hi"
+import {HiTranslate, HiOutlineSwitchHorizontal} from "react-icons/hi"
 import { useToast } from './ui/use-toast'
 import axios from 'axios'
 
@@ -73,8 +73,20 @@ export default function Translate() {
 
     }
 
-    
+    const handleSwitch = () => {
+        const oldText = text;
+        const oldLang = choosenLanguage
 
+        const oldTranslateLang = translateLanguage
+        const oldTranslatedText = translatedText
+
+        setChoosenLanguage(oldTranslateLang)
+        setTranslateLanguage(oldLang)
+
+        setText(oldTranslatedText)
+        setTranslatedText(oldText)
+
+    }
 
   return (
     <section
@@ -86,10 +98,24 @@ export default function Translate() {
             Translate
         </h1>
         <div
-        className='flex flex-col sm:flex-row gap-4 w-full max-w-[1000px]'
+        className='flex flex-col sm:flex-row gap-4 w-full max-w-[1000px] relative'
         >
-            <TranslateCard setLanguage={setChoosenLanguage} setText={setText} text={text}/>
-            <TranslateCard setLanguage={setTranslateLanguage} text={translatedText} />
+            <TranslateCard 
+            title='From'
+            language={choosenLanguage}
+            setLanguage={setChoosenLanguage} 
+            setText={setText} 
+            text={text}/>
+            <TranslateCard 
+            title='To'
+            language={translateLanguage}
+            setLanguage={setTranslateLanguage} 
+            text={translatedText} 
+            />
+            <HiOutlineSwitchHorizontal 
+            className='absolute left-2/4 -translate-x-2/4 text-4xl top-6 dark:text-black dark:bg-[#fafaf9] rounded-full p-2 bg-[#0c0a09] text-[#fafaf9] hover:opacity-75 transition-opacity cursor-pointer' 
+            onClick={() => handleSwitch()}
+            />
         </div>
         <Button
         className='mt-4 flex gap-2'

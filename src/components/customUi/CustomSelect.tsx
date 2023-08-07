@@ -15,36 +15,13 @@ import {
 //Props types
 type CustomSelectProps = {
     setLanguage: Dispatch<SetStateAction<string>>
+    language: string
 }
 
-//constants
-const languages = [
-    {label: "Danish", value: "da"},
-    { "label": "Chinese", "value": "zh" },
-    { "label": "Spanish", "value": "es" },
-    { "label": "English", "value": "en" },
-    { "label": "Hindi", "value": "hi" },
-    { "label": "Arabic", "value": "ar" },
-    { "label": "Bengali", "value": "bn" },
-    { "label": "Russian", "value": "ru" },
-    { "label": "Portuguese", "value": "pt" },
-    { "label": "Indonesian", "value": "id" },
-    { "label": "Urdu", "value": "ur" },
-    { "label": "French", "value": "fr" },
-    { "label": "Japanese", "value": "ja" },
-    { "label": "German", "value": "de" },
-    { "label": "Turkish", "value": "tr" },
-    { "label": "Korean", "value": "ko" },
-    { "label": "Italian", "value": "it" },
-    { "label": "Vietnamese", "value": "vi" },
-    { "label": "Tamil", "value": "ta" },
-    { "label": "Telugu", "value": "te" },
-    { "label": "Marathi", "value": "mr" }
-  ]
-
-export function CustomSelect({setLanguage} : CustomSelectProps) {
+export function CustomSelect({setLanguage, language} : CustomSelectProps) {
+  
   return (
-    <Select onValueChange={(e) => setLanguage(e)}>
+    <Select value={language} onValueChange={(e) => setLanguage(e)}>
       <SelectTrigger className="w-[180px]">
         <SelectValue placeholder="Select a language" />
       </SelectTrigger>

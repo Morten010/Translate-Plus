@@ -8,9 +8,11 @@ type TranslateCardProps = {
     text: string
     setText?: Dispatch<SetStateAction<string>>
     setLanguage: Dispatch<SetStateAction<string>>
+    language: string
+    title: string
 }
 
-export default function TranslateCard({text, setText, setLanguage}: TranslateCardProps) {
+export default function TranslateCard({title, text, setText, setLanguage, language}: TranslateCardProps) {
     
   return (
     <Card className="w-full sm:w-[50%]">
@@ -18,8 +20,8 @@ export default function TranslateCard({text, setText, setLanguage}: TranslateCar
             <CardTitle
             className="flex items-center gap-2"
             >
-            From:
-            <CustomSelect setLanguage={setLanguage}/>
+            {title}
+            <CustomSelect language={language} setLanguage={setLanguage}/>
             </CardTitle>
         </CardHeader>
 
