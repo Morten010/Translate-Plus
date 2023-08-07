@@ -1,12 +1,13 @@
 # [Translate Plus - Web translator](https://kicks-webshop.vercel.app/)
 
-Built with the Next.js App Router, TypeScript, Tailwind, Planetscale, Zustand and Prisma.
+Built with the Next.js App Router, TypeScript, Tailwind and Shadcn.
 
-[![Kicks Webshop](./public/screenshots/product.png)](https://kicks-webshop.vercel.app/)
+[![Translate Plus](./public/thumbnail.png)](https://translate-plus.vercel.app/)
 
 ## Features
 
  - Translate between 21 languages!!
+ - Dark theme/Light theme
 
 ## Tech Stack
 
