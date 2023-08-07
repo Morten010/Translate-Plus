@@ -1,6 +1,6 @@
 # [Translate Plus - Web translator](https://kicks-webshop.vercel.app/)
 
-Built with the Next.js App Router, TypeScript, Tailwind, Planetscale, Zustand and Prisma.
+Built with the Next.js App Router, TypeScript, Tailwind and Shadcn.
 
 [![Kicks Webshop](./public/thumbnail.png)](https://kicks-webshop.vercel.app/)
 
