@@ -16,13 +16,7 @@ export default function Translate() {
     const handleTranslate = async () => {
         console.log(choosenLanguage, translateLanguage);
         //errors for missing language
-        if(!translateLanguage){
-            toast({
-                title: "Missing Language",
-            })
-            return
-        }
-        if(!choosenLanguage){
+        if(!translateLanguage || !choosenLanguage){
             toast({
                 title: "Missing Language",
             })
@@ -80,6 +74,13 @@ export default function Translate() {
         const oldTranslateLang = translateLanguage
         const oldTranslatedText = translatedText
 
+        if(!translateLanguage || !choosenLanguage){
+            toast({
+                title: "Missing Something to switch between.",
+            })
+            return
+        }
+
         setChoosenLanguage(oldTranslateLang)
         setTranslateLanguage(oldLang)
 
@@ -113,7 +114,7 @@ export default function Translate() {
             text={translatedText} 
             />
             <HiOutlineSwitchHorizontal 
-            className='absolute left-2/4 -translate-x-2/4 text-4xl top-6 dark:text-black dark:bg-[#fafaf9] rounded-full p-2 bg-[#0c0a09] text-[#fafaf9] hover:opacity-75 transition-opacity cursor-pointer' 
+            className='absolute sm:left-2/4 sm:-translate-x-[25%] text-4xl sm:top-6 dark:text-black dark:bg-[#fafaf9] rounded-full p-2 bg-[#0c0a09] text-[#fafaf9] hover:opacity-75 transition-opacity cursor-pointer top-2/4 left-2/4 -translate-x-2/4 -translate-y-[50%]' 
             onClick={() => handleSwitch()}
             />
         </div>
