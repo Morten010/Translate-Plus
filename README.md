@@ -1,4 +1,4 @@
-# [Translate Plus - Web translator](https://kicks-webshop.vercel.app/)
+# [Translate Plus - Web translator](https://translate-plus.vercel.app/)
 
 Built with the Next.js App Router, TypeScript, Tailwind and Shadcn.
 
