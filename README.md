@@ -2,7 +2,7 @@
 
 Built with the Next.js App Router, TypeScript, Tailwind, Planetscale, Zustand and Prisma.
 
-[![Kicks Webshop](./public/screenshots/product.png)](https://kicks-webshop.vercel.app/)
+[![Kicks Webshop](./public/thumbnail.png)](https://kicks-webshop.vercel.app/)
 
 ## Features
 
